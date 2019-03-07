@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <h3>Caro simple</h3>
+     <p id="carogame"></p>
+     <input type="button" value="Nguoi choi 1" onclick="Nguoichoi1()">
+     <input type="button" value="Nguoi choi 2" onclick="Nguoichoi2()">
+<script>
+    let  b = document.getElementById("carogame");
+    let board = [];
+    let data = "";
+    //console.log(board);
+    for (let i = 0; i < 5; i++) {
+        board[i] = [0,0,0,0,0];
+        data += "<br/>";
+        for (let j= 0; j < 5; j++){
+            data += board[i][j] + "&nbsp;";
+        }
+    }
+    function Nguoichoi1() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        board[positionX][positionY] = "x";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = "<hr/>" + data;
+    }
+    function Nguoichoi2() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        board[positionX][positionY] = "o";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = "<hr/>" + data;
+    }
+</script>
+</body>
+</html>
